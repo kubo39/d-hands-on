@@ -158,3 +158,7 @@ $ dub fetch --version='~master' dfmt && dub run dfmt -- -h
 
 - [言語仕様](https://dlang.org/spec/spec.html)
 - [ライブラリ](https://dlang.org/phobos/index.html)
+
+### 読み物
+
+- [公式ブログ](https://dlang.org/blog/) 言語実装やライブラリ紹介、プロダクション事例などのエントリがあります。
