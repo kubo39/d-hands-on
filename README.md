@@ -31,7 +31,7 @@ Copyright (c) 1999-2017 by Digital Mars written by Walter Bright
 毎回sourceコマンドを打つのがめんどうであれば、以下の内容を ~/.bashenv などにはりつけるとよいでしょう。dmdのバージョンは手元の環境と揃うように注意してください。
 
 ```bash
-export PATH="$HOME/dlang/dub:/home/kubo39/dlang/dmd-2.077.0/linux/bin64:${PATH:-}"
+export PATH="$HOME/dlang/dub:$HOME/dlang/dmd-2.077.0/linux/bin64:${PATH:-}"
 export LIBRARY_PATH="$HOME/dlang/dmd-2.077.0/linux/lib64:${LIBRARY_PATH:-}"
 export LD_LIBRARY_PATH="$HOME/dlang/dmd-2.077.0/linux/lib64:${LD_LIBRARY_PATH:-}"
 export DMD=dmd
