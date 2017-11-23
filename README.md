@@ -145,3 +145,15 @@ $ dub fetch --version='~master' dfmt && dub run dfmt -- -h
 ### エディタ
 
 - [emacs](./emacs.md)
+
+## 参考になるウェブ資料
+
+### 入門
+
+[dlang tour](https://tour.dlang.org/) がおすすめです。
+有志が [邦訳したもの](https://tour.dlang.org/tour/ja/welcome/welcome-to-d) があるので日本語で進めることもできます。
+
+### 仕様
+
+- [言語仕様](https://dlang.org/spec/spec.html)
+- [ライブラリ](https://dlang.org/phobos/index.html)
