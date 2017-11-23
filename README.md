@@ -28,7 +28,7 @@ DMD64 D Compiler v2.077.0
 Copyright (c) 1999-2017 by Digital Mars written by Walter Bright
 ```
 
-毎回sourceコマンドを打つのがめんどうであれば、以下の内容を ~/.bashenv などにはりつけるとよいでしょう。dmdのバージョンは手元の環境と揃うように注意してください。
+毎回sourceコマンドを打つのがめんどうであれば、以下の内容を ~/.profile などに追記するとよいでしょう。dmdのバージョンは手元の環境と揃うように注意してください。
 
 ```bash
 export PATH="$HOME/dlang/dub:$HOME/dlang/dmd-2.077.0/linux/bin64:${PATH:-}"
