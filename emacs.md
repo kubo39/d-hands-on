@@ -23,13 +23,13 @@
 [d-mode.el](https://github.com/Emacs-D-Mode-Maintainers/Emacs-D-Mode) はD言語の言語モードです。
 ソースコードにシンタックスハイライトがつきます。
 
-`M-x package-install RET d-mode RET` を実行してd-mode.elをダウンロードします。
+`M-x package-install d-mode` を実行してd-mode.elをダウンロードします。
 
 ## company-dcd
 
 [company-dcd](https://github.com/tsukimizake/company-dcd) はemacsから補完ライブラリであるDCDを利用してソースコードの補完をできるようにします。
 
-`M-x package-install RET company-dcd RET` を実行してダウンロードします。
+`M-x package-install company-dcd` を実行してダウンロードします。
 
 emacs内で使う場合は `(require company-dcd)` を追加すればよいです。
 
