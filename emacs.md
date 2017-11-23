@@ -43,10 +43,12 @@ HOME直下でDCDをビルドした場合、以下のようにパスを通せば�
 DCD自体が提供していないのですが、compnay-dcdはgoto-definitionの機能をもっています。これは関数の定義元にジャンプすることができる機能です。
 デフォルトでは `C-c .` で定義元へジャンプ、 `C-c ,` で戻ってくるようになっています。
 
+また `C-c s` でシンボル名を入力して定義箇所を探すことも可能です。
+
 ## elisp-dfmt
 
 [elisp-dfmt](https://github.com/qsimpleq/elisp-dfmt) はemacs上でdfmtプログラムを実行してフォーマットする拡張です。
-私は `C-c F f` を実行してファイル全体にフォーマッタをかける使い方が多いですが、バッファやリージョン単位でもフォーマット可能です。
+私は `C-c F b` を実行してバッファに対してフォーマッタをかける使い方が多いですが、ファイルやリージョン単位でもフォーマット可能です。
 
 DCD同様、dfmtの実行バイナリにパスを通しておく必要があります。
 
@@ -75,8 +77,5 @@ DCD同様、dfmtの実行バイナリにパスを通しておく必要があり�
             (setq c-basic-offset 4)
             (setq tab-width 4)
             (company-dcd-mode)
-            (dfmt-setup-keys)
-            (define-key company-dcd-mode-map (kbd "M-.") 'company-dcd-goto-definition)
-            (define-key company-dcd-mode-map (kbd "M-,") 'company-dcd-goto-def-pop-marker)
-            ))
+            (dfmt-setup-keys)))
 ```
