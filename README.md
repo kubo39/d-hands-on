@@ -146,6 +146,7 @@ $ dub fetch --version='~master' dfmt && dub run dfmt -- -h
 ### エディタ
 
 - [emacs](./emacs.md)
+- [vim](./vim.md)
 
 ## 参考になるウェブ資料
 
