@@ -77,6 +77,41 @@ installer経由でインストールした場合、dubはすでに入ってい�
 
 基本の使い方は [こちら](http://code.dlang.org/getting_started)を、 設定ファイルの書き方は [こちら](https://github.com/dlang/dub) を参考にしてください。
 
+少し試してみましょう。 `test` というプロジェクトを作ってみます。
+
+```console
+$ dub init -n test && cd $_
+Successfully created an empty project in '/home/kubo39/dev/dlang/workspace/test'.
+Package successfully created in test
+$ tree -a
+.
+├── .gitignore
+├── dub.json
+└── source
+    └── app.d
+
+1 directory, 3 files
+```
+
+デフォルトでは簡単な出力プログラムが生成されます。これを動かしてみましょう。
+プログラムを実行するには `dub run` コマンドを実行します。
+
+```console
+$ cat source/app.d
+import std.stdio;
+
+void main()
+{
+        writeln("Edit source/app.d to start your project.");
+}
+$ dub run
+Performing "debug" build using dmd for x86_64.
+test ~master: building configuration "application"...
+Linking...
+Running ./test
+Edit source/app.d to start your project.
+```
+
 ### DCD
 
 [DCD](https://github.com/dlang-community/DCD) はD言語の補完ツールです。エディタの拡張などを通してモジュール名や関数名などの補完ができるようになります。
