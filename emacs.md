@@ -3,6 +3,7 @@
 ## 基本設定
 
 基本設定としてまずパッケージリストにmepla/elpaを追加します。
+以下の内容を .emacs.d/init.el に追記して .emacs.d/init.el を再読み込みしてください。
 
 ```
 (require 'package)
@@ -25,6 +26,13 @@
 
 `M-x package-install d-mode` を実行してd-mode.elをダウンロードします。
 
+d-modeを拡張子が `.d` のファイルで有効にするためには、以下の内容を .emacs.d/init.el に追記してください。
+
+```
+(require 'd-mode)
+(setq auto-mode-alist (cons '("\\.d$" . d-mode) auto-mode-alist))
+```
+
 ## company-dcd
 
 [company-dcd](https://github.com/tsukimizake/company-dcd) はemacsから補完ライブラリであるDCDを利用してソースコードの補完をできるようにします。
@@ -32,6 +40,14 @@
 `M-x package-install company-dcd` を実行してダウンロードします。
 
 emacs内で使う場合は `(require company-dcd)` を追加すればよいです。
+
+d-modeが起動しているときに有効にするには、以下のように書けばよいです。
+
+```
+(add-hook 'd-mode-hook
+          (lambda ()
+            (company-dcd-mode)))
+```
 
 DCDの実行バイナリにパスを通すことを忘れないでください。
 HOME直下でDCDをビルドした場合、以下のようにパスを通せばよいです。
@@ -50,6 +66,14 @@ DCD自体が提供していないのですが、compnay-dcdはgoto-definitionの
 [elisp-dfmt](https://github.com/qsimpleq/elisp-dfmt) はemacs上でdfmtプログラムを実行してフォーマットする拡張です。
 私は `C-c F b` を実行してバッファに対してフォーマッタをかける使い方が多いですが、ファイルやリージョン単位でもフォーマット可能です。
 
+company-dcd同様、d-modeが起動しているときに有効にするには以下のように書く必要があります。
+
+```
+(add-hook 'd-mode-hook
+          (lambda ()
+            (dfmt-setup-keys)))
+```
+
 DCD同様、dfmtの実行バイナリにパスを通しておく必要があります。
 
 ```
@@ -58,7 +82,7 @@ DCD同様、dfmtの実行バイナリにパスを通しておく必要があり�
 
 ## まとめ
 
-私の環境は以下のような設定ファイルになりました。
+私の環境では以下のような設定ファイルになりました。
 
 ```
 (require 'd-mode)
