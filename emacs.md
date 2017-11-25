@@ -61,6 +61,16 @@ DCD自体が提供していないのですが、compnay-dcdはgoto-definitionの
 
 また `C-c s` でシンボル名を入力して定義箇所を探すことも可能です。
 
+## flycheck
+
+flycheckはコーディング中に構文チェックを行ってくれる拡張機能です。D言語の場合、 [Supported Languages](http://www.flycheck.org/en/latest/languages.html#d) に入っているので特に意識せずに使えます。
+
+flycheckを全体で有効にしたい場合は以下の内容をinit.elに追記します。
+
+```
+(add-hook 'after-init-hook #'global-flycheck-mode)
+```
+
 ## elisp-dfmt
 
 [elisp-dfmt](https://github.com/qsimpleq/elisp-dfmt) はemacs上でdfmtプログラムを実行してフォーマットする拡張です。
@@ -85,6 +95,8 @@ DCD同様、dfmtの実行バイナリにパスを通しておく必要があり�
 私の環境では以下のような設定ファイルになりました。
 
 ```
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
 (require 'd-mode)
 
 (setq auto-mode-alist (cons '("\\.d$" . d-mode) auto-mode-alist))
