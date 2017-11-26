@@ -174,3 +174,5 @@ dubがすでに入っている場合以下のコマンドでインストール�
 ```console
 $ dub fetch --version='~master' dfmt && dub run dfmt -- -h
 ```
+
+オプションは [REAMDE](https://github.com/dlang-community/dfmt#configuration) を参照してください。
