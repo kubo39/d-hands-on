@@ -94,6 +94,10 @@ dmd-2.077.0
 [dlang tour](https://tour.dlang.org/) がおすすめです。
 有志が [邦訳したもの](https://tour.dlang.org/tour/ja/welcome/welcome-to-d) があるので日本語で進めることもできます。
 
+### パッケージホスティングサービス
+
+- [http://code.dlang.org/](http://code.dlang.org/) dubで使用可能なパッケージの一覧や設定ファイルの書式の確認などができます。
+
 ### 仕様
 
 - [言語仕様](https://dlang.org/spec/spec.html)
