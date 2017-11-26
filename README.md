@@ -122,6 +122,67 @@ Running ./test
 Edit source/app.d to start your project.
 ```
 
+ただ動かすだけではおもしろくないので、ライブラリを使ってみましょう。
+ここでは [requests](https://github.com/ikod/dlang-requests) というHTTPクライアントのライブラリを使ってみます。
+
+dub.jsonの中身にdependeiciesを追加して、requestsを指定します。
+
+```
+--- a/dub.json
++++ b/dub.json
+@@ -3,6 +3,9 @@
+        "authors": [
+                "kubo39"
+        ],
++       "dependencies": {
++               "requests": "0.6.0"
++       },
+        "description": "A minimal D application.",
+        "copyright": "Copyright © 2017, kubo39",
+        "license": "proprietary"
+```
+
+source/app.dの内容を以下のように編集します。
+
+```d
+import std.stdio;
+import requests;
+
+void main()
+{
+    auto content = getContent("http://httpbin.org/get");
+    writeln(content);
+}
+```
+
+HTTPクライアントを動かしてみましょう。以下のように出力されていれば成功です。
+
+```console
+$ dub run
+Performing "debug" build using dmd for x86_64.
+requests 0.6.0: target for configuration "std" is up to date.
+test ~master: building configuration "application"...
+Linking...
+To force a rebuild of up-to-date targets, run again with --force.
+Running ./test
+{
+  "args": {},
+  "headers": {
+    "Accept-Encoding": "gzip, deflate",
+    "Connection": "close",
+    "Host": "httpbin.org",
+    "User-Agent": "dlang-requests"
+  },
+  "origin": "222.228.213.15",
+  "url": "http://httpbin.org/get"
+}
+```
+
+特に指定しない場合、dubでインストールしたライブラリは `~/.dub/packages/` 以下に保存されます。
+また、dubでインストールしたパッケージの一覧がみたければ `dub list` コマンドで確認できます。
+
+その他dubで確認したいことがあれば `dub --help` で確認するとよいです。
+
 ### DCD
 
 [DCD](https://github.com/dlang-community/DCD) はD言語の補完ツールです。エディタの拡張などを通してモジュール名や関数名などの補完ができるようになります。
