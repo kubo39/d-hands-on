@@ -194,4 +194,4 @@ $ dub fetch --version='~master' dfmt && dub run dfmt -- -h
 
 dscannerと同様にバイナリにパスを通しておきましょう。
 
-オプションは [REAMDE](https://github.com/dlang-community/dfmt#configuration) を参照してください。
+オプションは [README](https://github.com/dlang-community/dfmt#configuration) を参照してください。
