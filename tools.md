@@ -132,6 +132,23 @@ dubがすでに入っている場合は以下のコマンドでインストー�
 $ dub fetch dscanner && dub run dscanner
 ```
 
+無事にビルドが成功した場合、特に明示的に指定しなければ `~/.dub/packages/dscanner-0.4.0/dscanner/dscanner` にバイナリが生成されているはずです。
+適宜パスを通しておいてください。
+
+```console
+$ readelf -wi ~/.dub/packages/dscanner-0.4.0/dscanner/dscanner| grep producer| head
+    <c>   DW_AT_producer    : Digital Mars D v2.077.0
+    <19760c>   DW_AT_producer    : Digital Mars D v2.077.0
+    <198454>   DW_AT_producer    : Digital Mars D v2.077.0
+    <198675>   DW_AT_producer    : Digital Mars D v2.077.0
+    <1988b8>   DW_AT_producer    : Digital Mars D v2.077.0
+    <198c40>   DW_AT_producer    : Digital Mars D v2.077.0
+    <199a3a>   DW_AT_producer    : Digital Mars D v2.077.0
+    <19b846>   DW_AT_producer    : Digital Mars D v2.077.0
+    <19b8ee>   DW_AT_producer    : Digital Mars D v2.077.0
+    <1a2c7a>   DW_AT_producer    : Digital Mars D v2.077.0
+```
+
 少しリントの機能を試してみましょう。以下のようなプログラムを書くとツールが警告を表示してくれます。
 `-S` オプションを引数に渡すことでスタイルチェックを行ってくれます。
 
@@ -174,5 +191,7 @@ dubがすでに入っている場合以下のコマンドでインストール�
 ```console
 $ dub fetch --version='~master' dfmt && dub run dfmt -- -h
 ```
+
+dscannerと同様にバイナリにパスを通しておきましょう。
 
 オプションは [REAMDE](https://github.com/dlang-community/dfmt#configuration) を参照してください。
