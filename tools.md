@@ -116,7 +116,8 @@ Running ./test
 
 ```console
 $ git clone https://github.com/dlang-communty/DCD
-$ cd DCD && make
+$ dub build --build=release --config=client
+$ dub build --build=release --config=server
 ```
 
 DCD/bin 以下に dcd-client/dcd-server というバイナリが生成されていれば成功です。

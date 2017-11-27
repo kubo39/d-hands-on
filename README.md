@@ -16,7 +16,6 @@
 - curl
 - git
 - gcc or clang
-- GNU make
 
 ### コンパイラ
 
