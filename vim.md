@@ -24,3 +24,22 @@ HOME直下でDCDをビルドした場合、以下のようにパスを通せば�
 call dutyl#register#tool('dcd-client','~/DCD/dcd-client')
 call dutyl#register#tool('dcd-server','~/DCD/dcd-server')
 ```
+
+## deoplete-d
+
+[deoplete-d](https://github.com/landaire/deoplete-d) は [deoplete](https://github.com/Shougo/deoplete.nvim) 上で動く補完プラグインです。
+
+`call dein#add('landaire/deoplete-d')` を .vimrc に追記して `call dein#install()` してインストールします。dutylと好きなほうを使うとよいと思います。
+
+HOME直下でDCDをビルドした場合、以下のようにパスを通せばよいです。
+
+```
+let g:deoplete#source#dcd_client_binary = '~/DCD/dcd-client'
+let g:deoplete#source#dcd_server_binary = '~/DCD/dcd-server'
+```
+
+自動的に補完候補を出したい場合は以下を追記してください。
+
+```
+let g:deoplete#source#dcd_server_autostart = 1
+```
