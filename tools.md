@@ -111,6 +111,8 @@ Running ./test
 
 [DCD](https://github.com/dlang-community/DCD) はD言語の補完ツールです。エディタの拡張などを通してモジュール名や関数名などの補完ができるようになります。
 
+Dockerを使っていてローカルに環境構築していない場合はバイナリを入手してください。
+
 ここでは手元にもってきてビルドするやり方を紹介します。
 ビルドは以下のコマンドで可能です。
 
@@ -149,6 +151,8 @@ $ readelf -wi ~/.dub/packages/dscanner-0.4.0/dscanner/dscanner| grep producer| h
     <19b8ee>   DW_AT_producer    : Digital Mars D v2.077.0
     <1a2c7a>   DW_AT_producer    : Digital Mars D v2.077.0
 ```
+
+Dockerを使っていてローカルに環境構築していない場合はバイナリを入手してください。
 
 少しリントの機能を試してみましょう。以下のようなプログラムを書くとツールが警告を表示してくれます。
 `-S` オプションを引数に渡すことでスタイルチェックを行ってくれます。
@@ -192,6 +196,8 @@ dubがすでに入っている場合以下のコマンドでインストール�
 ```console
 $ dub fetch --version='~master' dfmt && dub run dfmt -- -h
 ```
+
+Dockerを使っていてローカルに環境構築していない場合はバイナリを入手してください。
 
 dscannerと同様にバイナリにパスを通しておきましょう。
 
