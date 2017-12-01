@@ -3,13 +3,15 @@
 ## dub
 
 [dub](https://github.com/dlang/dub) はD言語のビルドツール兼パッケージマネージャです。
-installer経由でインストールした場合、dubはすでに入っている状態です。
+installer経由でインストールした場合、dubはすでに入っている状態です。Dockerを使っている場合は、前述した配布イメージでdubコマンドも使うことができます。
 
 基本の使い方は [こちら](http://code.dlang.org/getting_started)を、 設定ファイルの書き方は [こちら](https://github.com/dlang/dub) を参考にしてください。
 
 ### ビルドツール
 
 少し試してみましょう。 `test` というプロジェクトを作ってみます。
+
+下記のdubコマンドはDockerを使う場合は `docker run --rm -ti --user "$(id -u)":"$(id -g)" -v "$(pwd)":/src -w /src dlanguage/dmd dub init -n test` として実行してください。
 
 ```console
 $ dub init -n test && cd $_
@@ -26,7 +28,7 @@ $ tree -a
 ```
 
 デフォルトでは簡単な出力プログラムが生成されます。これを動かしてみましょう。
-プログラムを実行するには `dub run` コマンドを実行します。
+プログラムを実行するには `dub run` コマンド(Dockerで動かす場合場合は `docker run --rm -ti --user "$(id -u)":"$(id -g)" -v "$(pwd)":/src dlanguage/dmd dub run`) を実行します。
 
 ```console
 $ cat source/app.d
@@ -111,9 +113,7 @@ Running ./test
 
 [DCD](https://github.com/dlang-community/DCD) はD言語の補完ツールです。エディタの拡張などを通してモジュール名や関数名などの補完ができるようになります。
 
-Dockerを使っていてローカルに環境構築していない場合はバイナリを入手してください。
-
-ここでは手元にもってきてビルドするやり方を紹介します。
+手元にもってきてビルドするやり方を紹介します。
 ビルドは以下のコマンドで可能です。
 
 ```console
@@ -122,7 +122,9 @@ $ dub build --build=release --config=client
 $ dub build --build=release --config=server
 ```
 
-DCD/bin 以下に dcd-client/dcd-server というバイナリが生成されていれば成功です。
+Dockerを使っていてローカルに環境構築していない場合はバイナリを入手してください。
+
+DCD/ 以下に dcd-client/dcd-server というバイナリが生成されていれば成功です。
 
 ## D-Scanner
 
