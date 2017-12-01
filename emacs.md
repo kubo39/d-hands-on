@@ -3,7 +3,7 @@
 ## 基本設定
 
 基本設定としてまずパッケージリストにmepla/elpaを追加します。
-以下の内容を .emacs.d/init.el に追記して .emacs.d/init.el を再読み込みしてください。
+以下の内容をinit.elに追記してinit.elを再読み込みしてください。
 
 ```
 (require 'package)
@@ -21,13 +21,10 @@
 [d-mode.el](https://github.com/Emacs-D-Mode-Maintainers/Emacs-D-Mode) はD言語の言語モードです。
 ソースコードにシンタックスハイライトがつきます。
 
-`M-x package-install d-mode` を実行してd-mode.elをダウンロードします。
-
-d-modeを拡張子が `.d` のファイルで有効にするためには、以下の内容を .emacs.d/init.el に追記してください。
+`M-x package-install d-mode` を実行してd-mode.elをダウンロードして以下の内容をinit.elに追記してください。
 
 ```
 (require 'd-mode)
-(setq auto-mode-alist (cons '("\\.d$" . d-mode) auto-mode-alist))
 ```
 
 ## company-dcd
@@ -95,8 +92,6 @@ DCD同様、dfmtの実行バイナリにパスを通しておく必要があり�
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
 (require 'd-mode)
-
-(setq auto-mode-alist (cons '("\\.d$" . d-mode) auto-mode-alist))
 
 (add-to-list 'exec-path "~/dlang/dmd-2.077.0/linux/bin64/")
 (add-to-list 'exec-path "~/.dub/packages/dfmt-master/dfmt/")
