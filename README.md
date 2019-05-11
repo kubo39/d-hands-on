@@ -10,7 +10,7 @@
 
 ### Docker
 
-Dockerを使う場合は [配布イメージ](https://hub.docker.com/r/dlanguage/dmd/) を `docker pull dlanguage/dmd` で取得して使うことが出来ます。
+Dockerを使う場合は [配布イメージ](https://hub.docker.com/r/dlang2/dmd-ubuntu/) を `docker pull dlang2/dmd-ubuntu` で取得して使うことが出来ます。
 
 ### 事前に必要なソフトウェア
 
