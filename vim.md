@@ -21,8 +21,8 @@ HOME直下でDCDをビルドした場合、以下のようにパスを通せば�
 
 ```
 " dutly config
-call dutyl#register#tool('dcd-client','~/DCD/dcd-client')
-call dutyl#register#tool('dcd-server','~/DCD/dcd-server')
+call dutyl#register#tool('dcd-client','~/.dub/bin/dcd-client')
+call dutyl#register#tool('dcd-server','~/.dub/bin/dcd-server')
 ```
 
 ## deoplete-d
@@ -34,8 +34,8 @@ call dutyl#register#tool('dcd-server','~/DCD/dcd-server')
 HOME直下でDCDをビルドした場合、以下のようにパスを通せばよいです。
 
 ```
-let g:deoplete#source#dcd_client_binary = '~/DCD/dcd-client'
-let g:deoplete#source#dcd_server_binary = '~/DCD/dcd-server'
+let g:deoplete#source#dcd_client_binary = '~/.dub/bin/dcd-client'
+let g:deoplete#source#dcd_server_binary = '~/.dub/bin/dcd-server'
 ```
 
 自動的に補完候補を出したい場合は以下を追記してください。

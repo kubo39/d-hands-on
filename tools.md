@@ -111,20 +111,22 @@ Running ./test
 
 ## DCD
 
-[DCD](https://github.com/dlang-community/DCD) はD言語の補完ツールです。エディタの拡張などを通してモジュール名や関数名などの補完ができるようになります。
+[DCD](https://github.com/dlang-community/DCD) はD言語の補完ツールです。
+エディタの拡張などを通してモジュール名や関数名などの補完ができるようになります。
+また補完以外にもコードジャンプの機能なども提供されます。
 
-手元にもってきてビルドするやり方を紹介します。
-ビルドは以下のコマンドで可能です。
+dubがすでに入っている場合は以下のコマンドでインストールできます。
 
 ```console
-$ git clone https://github.com/dlang-communty/DCD
-$ dub build --build=release --config=client
-$ dub build --build=release --config=server
+$ dub fetch dcd
+$ dub build dcd --build=release --config=client
+$ dub build dcd --build=release --config=server
 ```
 
-Dockerを使っていてローカルに環境構築していない場合はバイナリを入手してください。
+無事にビルドが成功した場合、特に明示的に指定しなければ `~/.dub/packages/dcd-X.X.X/dscanner/bin/` にバイナリが生成されているはずです。
+適宜パスを通しておいてください。
 
-DCD/ 以下に dcd-client/dcd-server というバイナリが生成されていれば成功です。
+Dockerを使っていてローカルに環境構築していない場合はバイナリを入手してください。
 
 ## D-Scanner
 
@@ -134,25 +136,12 @@ DCD/ 以下に dcd-client/dcd-server というバイナリが生成されてい�
 dubがすでに入っている場合は以下のコマンドでインストールできます。
 
 ```console
-$ dub fetch dscanner && dub run dscanner
+$ dub fetch dscanner
+$ dub build dscanner --build=release
 ```
 
-無事にビルドが成功した場合、特に明示的に指定しなければ `~/.dub/packages/dscanner-0.4.0/dscanner/dscanner` にバイナリが生成されているはずです。
+無事にビルドが成功した場合、特に明示的に指定しなければ `~/.dub/packages/dscanner-X.X.X/dscanner/bin/` にバイナリが生成されているはずです。
 適宜パスを通しておいてください。
-
-```console
-$ readelf -wi ~/.dub/packages/dscanner-0.4.0/dscanner/dscanner| grep producer| head
-    <c>   DW_AT_producer    : Digital Mars D v2.077.0
-    <19760c>   DW_AT_producer    : Digital Mars D v2.077.0
-    <198454>   DW_AT_producer    : Digital Mars D v2.077.0
-    <198675>   DW_AT_producer    : Digital Mars D v2.077.0
-    <1988b8>   DW_AT_producer    : Digital Mars D v2.077.0
-    <198c40>   DW_AT_producer    : Digital Mars D v2.077.0
-    <199a3a>   DW_AT_producer    : Digital Mars D v2.077.0
-    <19b846>   DW_AT_producer    : Digital Mars D v2.077.0
-    <19b8ee>   DW_AT_producer    : Digital Mars D v2.077.0
-    <1a2c7a>   DW_AT_producer    : Digital Mars D v2.077.0
-```
 
 Dockerを使っていてローカルに環境構築していない場合はバイナリを入手してください。
 
@@ -196,7 +185,8 @@ $
 dubがすでに入っている場合以下のコマンドでインストールできます。
 
 ```console
-$ dub fetch --version='~master' dfmt && dub run dfmt -- -h
+$ dub fetch dfmt
+$ dub build dfmt --build=release
 ```
 
 Dockerを使っていてローカルに環境構築していない場合はバイナリを入手してください。

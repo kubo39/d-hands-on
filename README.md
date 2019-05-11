@@ -10,7 +10,7 @@
 
 ### Docker
 
-[配布イメージ](https://hub.docker.com/r/dlanguage/dmd/) を `docker pull dlanguage/dmd` で取得して使うことが出来ます。
+Dockerを使う場合は [配布イメージ](https://hub.docker.com/r/dlanguage/dmd/) を `docker pull dlanguage/dmd` で取得して使うことが出来ます。
 
 ### 事前に必要なソフトウェア
 
@@ -32,21 +32,21 @@ D言語には複数のコンパイラ実装が存在しますが、ここでは�
 $ curl -fsS https://dlang.org/install.sh | bash -s dmd
 ```
 
-sourceコマンドを使ってコンパイラへパスを通してやると使えるようになります。ここではコンパイラのバージョンとしてDMD 2.077.0を指定しています。
+sourceコマンドを使ってコンパイラへパスを通してやると使えるようになります。ここではコンパイラのバージョンとしてDMD 2.086.0を指定しています。
 
 ```console
-$ source ~/dlang/dmd-2.077.0/activate
-(dmd-2.077.0)$ dmd --version
-DMD64 D Compiler v2.077.0
-Copyright (c) 1999-2017 by Digital Mars written by Walter Bright
+$ source ~/dlang/dmd-2.086.0/activate
+(dmd-2.086.0)$ dmd --version
+DMD64 D Compiler v2.086.0
+Copyright (c) 1999-2019 by Digital Mars written by Walter Bright
 ```
 
 毎回sourceコマンドを打つのがめんどうであれば、以下の内容を ~/.profile などに追記するとよいでしょう。dmdのバージョンは手元の環境と揃うように注意してください。
 
 ```bash
-export PATH="$HOME/dlang/dub:$HOME/dlang/dmd-2.077.0/linux/bin64:${PATH:-}"
-export LIBRARY_PATH="$HOME/dlang/dmd-2.077.0/linux/lib64:${LIBRARY_PATH:-}"
-export LD_LIBRARY_PATH="$HOME/dlang/dmd-2.077.0/linux/lib64:${LD_LIBRARY_PATH:-}"
+export PATH="$HOME/dlang/dub:$HOME/dlang/dmd-2.086.0/linux/bin64:${PATH:-}"
+export LIBRARY_PATH="$HOME/dlang/dmd-2.086.0/linux/lib64:${LIBRARY_PATH:-}"
+export LD_LIBRARY_PATH="$HOME/dlang/dmd-2.086.0/linux/lib64:${LD_LIBRARY_PATH:-}"
 export DMD=dmd
 export DC=dmd
 ```
@@ -76,9 +76,8 @@ Run "install.sh <command> --help to get help for a specific command.
 If no argument are provided, the latest DMD compiler will be installed.
 
 $ bash ~/dlang/install.sh list
-ldc-1.5.0
-gdc-4.8.5
-dmd-2.077.0
+ldc-1.15.0
+dmd-2.086.0
 ```
 
 ## 開発環境

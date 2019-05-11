@@ -44,10 +44,10 @@ d-modeが起動しているときに有効にするには、以下のように�
 ```
 
 DCDの実行バイナリにパスを通すことを忘れないでください。
-HOME直下でDCDをビルドした場合、以下のようにパスを通せばよいです。
+私は生成したツールのバイナリは `~/.dub/bin` ディレクトリにまとめるようにしています。
 
 ```
-(add-to-list 'exec-path "~/DCD/bin/")
+(add-to-list 'exec-path "~/.dub/bin/")
 ```
 
 DCD自体が提供していないのですが、compnay-dcdはgoto-definitionの機能をもっています。これは関数の定義元にジャンプすることができる機能です。
@@ -80,10 +80,6 @@ company-dcd同様、d-modeが起動しているときに有効にするには以
 
 DCD同様、dfmtの実行バイナリにパスを通しておく必要があります。
 
-```
-(add-to-list 'exec-path "~/.dub/packages/dfmt-master/dfmt/")
-```
-
 ## まとめ
 
 私の環境では以下のような設定ファイルになりました。
@@ -93,9 +89,8 @@ DCD同様、dfmtの実行バイナリにパスを通しておく必要があり�
 
 (require 'd-mode)
 
-(add-to-list 'exec-path "~/dlang/dmd-2.077.0/linux/bin64/")
-(add-to-list 'exec-path "~/.dub/packages/dfmt-master/dfmt/")
-(add-to-list 'exec-path "~/DCD/bin/")
+(add-to-list 'exec-path "~/dlang/dmd-2.086.0/linux/bin64/")
+(add-to-list 'exec-path "~/.dub/bin/")
 
 (require 'company-dcd)
 
@@ -105,5 +100,8 @@ DCD同様、dfmtの実行バイナリにパスを通しておく必要があり�
             (setq c-basic-offset 4)
             (setq tab-width 4)
             (company-dcd-mode)
-            (dfmt-setup-keys)))
+            (dfmt-setup-keys)
+            (define-key company-dcd-mode-map (kbd "M-.") 'company-dcd-goto-definition)
+            (define-key company-dcd-mode-map (kbd "M-,") 'company-dcd-goto-def-pop-marker)
+            (local-set-key (kbd "C-c C-f") 'dfmt-buffer)))
 ```
